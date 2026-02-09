@@ -1,79 +1,120 @@
 .hero {
-    background-color: map-get($colors, bg);
-    padding: px2rem(100px) px2rem(60px);
-    overflow: hidden;
-  
+  background-color: map-get($colors, bg);
+  padding: px2rem(100px) px2rem(60px);
+  overflow: hidden;
+
+  @include mobile {
+    padding: px2rem(60px) px2rem(20px);
+  }
+}
+
+.container {
+  max-width: px2rem(1200px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: px2rem(40px);
+
+  @include tablet {
+    flex-direction: column;
+    text-align: center;
+    gap: px2rem(60px);
+  }
+}
+
+.content {
+  flex: 1;
+
+  .title {
+    font-family: map-get($fonts, heading);
+    font-size: px2rem(48px);
+    font-weight: map-get($font-weights, bold);
+    line-height: 1.2;
+    color: map-get($colors, text);
+    white-space: pre-line;
+    word-break: keep-all;
+    overflow-wrap: normal;
+
+    .brand {
+      color: map-get($colors, primary);
+    }
+
     @include mobile {
-      padding: px2rem(60px) 0;
+      font-size: px2rem(32px);
     }
   }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: px2rem(40px);
-  
-    @include tablet {
-      flex-direction: column;
-      text-align: center;
-    }
+}
+
+.ctaLink {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: px2rem(40px);
+
+  @include mobile {
+    margin-top: px2rem(30px);
   }
-  
-  .content {
-    flex: 1;
-  
-    .title {
-      font-family: map-get($fonts, heading); // Pretendard
-      font-size: px2rem(48px);
-      font-weight: map-get($font-weights, bold); // 700
-      line-height: 114%;
-      color: map-get($colors, text);
-  
-      .brand {
-        color: map-get($colors, primary); // #00A54D
-      }
-  
-      @include mobile {
-        font-size: px2rem(32px);
-      }
-    }
-  
-    .ctaButton {
-      margin-top: px2rem(30px);
-      padding: px2rem(12px) px2rem(24px);
-      background: map-get($colors, gr);
-      color: white;
-      border-radius: 50px; // 둥근 버튼
-      font-size: px2rem(20px);
-      font-weight: map-get($font-weights, semibold);
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s;
-  
-      &:hover {
-        background-color: map-get($colors, dark);
-      }
-    }
-  }
-  
-  .imageBox {
-    flex: 1;
-    width: 100%;
-    max-width: px2rem(500px);
-    aspect-ratio: 4 / 3;
-    border-radius: px2rem(24px); // 디자인의 둥근 모서리
-    overflow: hidden;
+}
+
+.ctaButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: px2rem(10px); // 텍스트와 아이콘 사이 간격
+  padding: px2rem(14px) px2rem(32px);
+  background: map-get($colors, gr);
+  color: map-get($grey, white);
+  border-radius: px2rem(50px);
+  font-size: px2rem(20px);
+  font-weight: map-get($font-weights, semibold);
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
   }
 
-  .heroImage {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; // 이미지가 잘리지 않게
-    object-position: center;
-    display: block;
-    border-radius: inherit;
+  @include mobile {
+    padding: px2rem(12px) px2rem(24px);
+    font-size: px2rem(18px);
   }
+}
+
+/* 아이콘 크기 조절 */
+.sendIcon {
+  width: px2rem(22px); // 버튼 텍스트 크기에 맞춰 작게 조절
+  height: px2rem(22px);
+  flex-shrink: 0; // 아이콘이 찌그러지지 않게 고정
+  
+  /* SVG 내부에 fill이 지정되어 있지 않은 경우 텍스트 색상을 따라감 */
+  path {
+    fill: currentColor;
+  }
+
+  @include mobile {
+    width: px2rem(18px);
+    height: px2rem(18px);
+  }
+}
+
+.imageBox {
+  flex: 1;
+  width: 100%;
+  max-width: px2rem(540px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include tablet {
+    max-width: px2rem(480px);
+  }
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}

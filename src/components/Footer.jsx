@@ -29,7 +29,7 @@ const Footer = () => {
           </div>
           
           <div className={styles.row}>
-            <span>서울특별시 송파구 위례광장로 199, 501-5호(장지동, 성희프라자)</span>
+            <span>서울 강남구 테헤란로 418 다봉타워빌딩 11-13층</span>
           </div>
           
           <div className={styles.row}>

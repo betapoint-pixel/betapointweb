@@ -39,6 +39,7 @@ const reviewData = [
 const Review = () => {
   return (
     <section className={styles.wrapper}>
+      <div className={styles.inner}>
       <h2 className={styles.title}>실제 고객의 목소리가 증명해요</h2>
       
       {/* 상단 지표 섹션 */}
@@ -63,6 +64,7 @@ const Review = () => {
             theme={review.theme}
           />
         ))}
+      </div> 
       </div>
     </section>
   );

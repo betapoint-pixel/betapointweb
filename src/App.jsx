@@ -14,7 +14,7 @@ function App() {
 
 
   return (
-    <div >
+    <div>
       <Header />
       <main>
         <Hero/>

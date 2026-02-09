@@ -7,7 +7,7 @@ const faqData = [
     question: "다른 회계외주 서비스랑 무엇이 다른가요 ?",
     answer: (
       <div>
-        <strong>단순히 장부를 대신 정리해주는 회계 외주가 아니라</strong>,<br />
+        <strong>단순히 장부를 대신 정리해주는 회계 외주가 아니라</strong>,
         월 단위 정기관리에 그치지 않고 주 단위 미팅은 물론, 필요 시 언제든지 비즈니스 논의가 가능한 <strong>경영 파트너</strong> 베타포인트입니다. 실시간 경영 관리를 통해 현금흐름과 수익성을 지속적으로 점검하고, 이를 바탕으로 <strong>구체적인 개선 제안과 컨설팅</strong>을 이어가며 내부 팀에 준하는 수준을 넘어, <strong>더 적극적으로 경영을 함께 운영해 나갑니다.</strong>
       </div>
     )
@@ -44,8 +44,8 @@ const FAQ = () => {
   return (
     <section id="faq" className={styles.section}>
       <div className={styles.inner}>
-        <h2 className={styles.title}>자주 묻는 질문을 모았어요.</h2>
-        
+        <h2 className={styles.title}>FAQ</h2>
+      
         <div className={styles.faqList}>
           {faqData.map((item) => (
             <div 

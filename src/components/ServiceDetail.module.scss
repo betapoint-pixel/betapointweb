@@ -1,10 +1,10 @@
 .service_detail {
-    padding: px2rem(60px) px2rem(40px);
+    padding: px2rem(60px) 0;
     background-color: #ffffff;
     font-family: map-get($fonts, body);
   
     .inner {
-      max-width: px2rem(1100px);
+      max-width: px2rem(1080px);
       margin: 0 auto;
     }
   
@@ -16,6 +16,7 @@
       border-bottom: 1px solid map-get($grey, 100);
       padding-bottom: px2rem(40px);
       position: relative;
+  
   
       // 장식용 구분선 중앙 점
       &::after {
@@ -104,6 +105,9 @@
   
     /* 반응형 처리 */
     @include tablet {
+      .service_detail {
+        padding: px2rem(20px) 0;
+      }
       .header {
         flex-direction: column;
         text-align: left;
@@ -115,6 +119,12 @@
       .card_list {
         grid-template-columns: 1fr; // 모바일/태블릿에선 세로로 한 줄씩
         gap: px2rem(16px);
+      }
+    }
+
+    @include mobile {
+      .service_detail {
+        padding: px2rem(20px) 0;
       }
     }
   }

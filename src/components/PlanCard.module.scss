@@ -1,132 +1,114 @@
 .card {
   flex: 1;
-  min-width: px2rem(320px);
-  max-width: px2rem(380px);
+  // min-width를 제거하거나 작게 설정하여 부모 너비에 유연하게 반응하게 함
+  min-width: px2rem(280px); 
+  max-width: px2rem(340px); // 카드 너비가 너무 넓어지는 것 방지
   background-color: map-get($grey, white);
-  padding: px2rem(48px) px2rem(40px);
+  padding: px2rem(40px) px2rem(32px); // 패딩 축소 (기존 48/40 -> 40/32)
   border-radius: px2rem(24px);
-  border: 1px solid rgba(map-get($colors, light), 0.6); // Stroke 유지
+  border: 1px solid rgba(map-get($colors, light), 0.6);
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-8px);
     border-color: map-get($colors, primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   }
 
   @include mobile {
-    // 모바일에서 세로로 보일 때 카드가 화면 양옆에 너무 붙지 않게 함
     width: 100%;
-    max-width: px2rem(400px); // 너무 퍼지지 않게 제한
-    min-width: unset;
-    padding: px2rem(32px) px2rem(24px);
+    max-width: px2rem(340px);
+    padding: px2rem(28px) px2rem(24px);
   }
 }
 
 .titleWrapper {
   display: flex;
   align-items: center;
-  justify-content: flex-start; // 나란히 정렬 고정
   gap: px2rem(12px);
-  margin-bottom: px2rem(20px);
-
-  @include mobile {
-    gap: px2rem(8px);
-  }
+  margin-bottom: px2rem(12px); // 간격 축소
 }
 
 .icon {
+  width: px2rem(32px); // 아이콘 크기 최적화
+  height: px2rem(32px);
   flex-shrink: 0;
-  width: px2rem(40px);
-  height: px2rem(40px);
 }
 
-
 .description {
-  font-size: px2rem(18px);
-  line-height: 1.4;
+  font-size: px2rem(16px); // 18 -> 16
+  line-height: 1.5;
   color: map-get($grey, 700);
-  margin-bottom: px2rem(40px);
+  margin-bottom: px2rem(32px);
   word-break: keep-all;
-  min-height: px2rem(54px);
+  min-height: px2rem(48px); // 높이 최적화
 
   @include mobile {
-    font-size: px2rem(16px); // 모바일에서 가독성을 위해 살짝 조절
+    font-size: px2rem(14px);
+    margin-bottom: px2rem(24px);
     min-height: auto;
   }
 }
 
 .priceSection {
-  margin-bottom: px2rem(48px);
+  margin-bottom: px2rem(32px);
   display: flex;
   align-items: baseline;
   color: map-get($colors, text);
 
-  .currency { font-size: px2rem(24px); font-weight: map-get($font-weights, bold); margin-right: px2rem(4px); }
+  .currency { font-size: px2rem(20px); font-weight: 700; margin-right: 4px; }
   .amount { 
-    font-size: px2rem(36px); 
-    font-weight: map-get($font-weights, bold); 
-    @include mobile { font-size: px2rem(30px); } // 가격 숫자만 살짝 조절
+    font-size: px2rem(32px); 
+    font-weight: 700;
+    @include mobile { font-size: px2rem(28px); }
   }
-  .period { font-size: px2rem(18px); color: map-get($grey, 400); margin-left: px2rem(8px); }
-}
-
-// 나머지 버튼 스타일 및 리스트 스타일은 기존과 동일하게 유지됩니다.
-
-.priceSection {
-  margin-bottom: px2rem(48px);
-  display: flex;
-  align-items: baseline;
-  color: map-get($colors, text);
-
-  .currency { font-size: px2rem(24px); font-weight: map-get($font-weights, bold); margin-right: px2rem(4px); }
-  .amount { font-size: px2rem(36px); font-weight: map-get($font-weights, bold); }
-  .period { font-size: px2rem(18px); color: map-get($grey, 400); margin-left: px2rem(8px); }
+  .period { font-size: px2rem(16px); color: map-get($grey, 400); margin-left: 6px; }
 }
 
 .featureList {
   list-style: none;
   padding: 0;
-  margin: 0 0 px2rem(60px) 0;
+  margin: 0 0 px2rem(40px) 0;
   flex-grow: 1;
 }
 
 .featureItem {
   position: relative;
-  padding-left: px2rem(24px);
-  font-size: px2rem(16px);
+  padding-left: px2rem(20px);
+  font-size: px2rem(15px); // 16 -> 15
   color: map-get($grey, 600);
-  line-height: 1.6;
-  margin-bottom: px2rem(16px);
+  line-height: 1.5;
+  margin-bottom: px2rem(12px);
+
+  @include mobile {
+    font-size: px2rem(13px);
+  }
 
   &::before {
     content: '';
     position: absolute;
     left: 0;
     top: px2rem(8px);
-    width: px2rem(6px);
-    height: px2rem(6px);
+    width: px2rem(5px);
+    height: px2rem(5px);
     background-color: map-get($colors, light);
     border-radius: 50%;
   }
 }
 
 .planButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  height: px2rem(56px);
-  border-radius: px2rem(28px);
+  height: px2rem(52px);
+  border-radius: px2rem(26px);
   background: map-get($colors, gr);
   color: map-get($grey, white);
-  font-weight: map-get($font-weights, semibold);
-  font-size: px2rem(18px);
-  text-decoration: none;
-  transition: opacity 0.2s ease;
+  font-weight: 600;
+  font-size: px2rem(16px);
   border: none;
-  outline: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
   
   &:hover { opacity: 0.9; }
 }

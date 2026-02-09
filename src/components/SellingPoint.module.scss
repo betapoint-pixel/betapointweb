@@ -1,20 +1,19 @@
 .selling_point {
   background-color: map-get($colors,bg);
-  padding: px2rem(120px) px2rem(24px);
-  font-family: map-get($fonts, body);
+  padding: px2rem(120px) px2rem(60px);
   display: flex;
   flex-direction: column;
   align-items: center;
 
   .header {
+    font-size: px2rem(20px);
     color: map-get($colors, primary);
-    margin-bottom: px2rem(20px);
+    margin-bottom: px2rem(60px);
   }
 
   .inner {
-    max-width: px2rem(800px);
+    max-width: px2rem(1080px);
     width: 100%;
-    padding: 0 px2rem(16px);
   }
 
   .content_list {
@@ -27,28 +26,30 @@
       display: flex;
       align-items: center;
       justify-content: center; 
-      gap: px2rem(100px); 
+      gap: px2rem(120px); 
 
       &:nth-child(even) {
         flex-direction: row-reverse;
       }
 
       .text_box {
-        flex: 0 1 px2rem(800px); 
+        flex: 1 1 px2rem(550px); // 더 많은 공간 차지하도록 flex-basis, grow 조정
+        max-width: px2rem(800px); // 기존보다 더 넓게 설정
+        width: 100%;
         min-width: 0;
         white-space: pre-line;
-        white-space: pre-line; // \n에만 줄바꿈 적용, 자동 줄바꿈 방지
 
         h3 {
           margin-bottom: px2rem(20px);
-          font-size: px2rem(24px);
+          font-size: px2rem(32px);
           line-height: 114%;
         }
 
         p {
-          white-space: pre-line; // <p>내부의 \n만 줄바꿈, 기타 자동줄바꿈 방지
-          word-break: keep-all; // 한글 단어 줄바꿈 제어 (가급적 줄바꿈 최소)
-          overflow-wrap: normal; // 너무 일찍 줄 안바꿈
+          font-size: px2rem(18px);
+          white-space: pre-line;
+          word-break: keep-all;
+          overflow-wrap: normal;
         }
       }
 
@@ -79,13 +80,13 @@
     }
 
     h2 {
-      text-align: center;
+      text-align: left;
     }
 
     .content_list {
       .item {
         flex-direction: column !important;
-        gap: px2rem(24px); // gap 축소
+        gap: px2rem(40px); // gap 축소
         align-items: center; // 추가: 중앙 정렬 명확화
 
         .image_box {
@@ -102,7 +103,7 @@
           flex: 0 0 auto; // 추가: 불필요한 늘어남 방지
           max-width: 100%; // 380px 대신 100%로 간소화
           width: 100%;
-          text-align: center; // 선택: 중앙 정렬이 필요한 경우
+          text-align: left // 선택: 중앙 정렬이 필요한 경우
 
           h3 {
             font-size: px2rem(24px);
@@ -119,13 +120,15 @@
     .inner {
       max-width: 100%; // 추가: 모바일에서는 패딩만으로 제어
       padding: 0 px2rem(8px);
+    
     }
 
     .content_list {
-      gap: px2rem(40px);
+      gap: px2rem(120px);
       
       .item {
-        gap: px2rem(20px); // 더 축소
+        gap: px2rem(40px); // 더 축소
+        text-align: left;
         
         .image_box {
           max-width: px2rem(220px);

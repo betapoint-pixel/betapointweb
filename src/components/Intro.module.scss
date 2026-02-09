@@ -1,0 +1,57 @@
+.intro {
+    padding: px2rem(120px) 0; // 충분한 상하 여백으로 시선 집중
+    background-color: map-get($grey, white);
+    text-align: center;
+  
+    @include mobile {
+      padding: px2rem(80px) 24px;
+    }
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .subText {
+    font-size: px2rem(24px);
+    color: map-get($grey, 400);
+    margin-bottom: px2rem(40px);
+    font-weight: map-get($font-weights, medium);
+  
+    @include mobile {
+      font-size: px2rem(18px);
+      margin-bottom: px2rem(24px);
+    }
+  }
+  
+  .mainTitle {
+    font-size: px2rem(36px);
+    font-weight: map-get($font-weights, bold);
+    margin-bottom: px2rem(48px);
+    letter-spacing: -0.02em; // 텍스트를 더 탄탄하게
+  
+    .gradientText {
+      background: map-get($colors, gr);
+      -webkit-background-clip: text; // 글자 모양대로 자르기
+      -webkit-text-fill-color: transparent; // 글자색 투명화
+      display: inline-block;
+    }
+  
+    @include mobile {
+      font-size: px2rem(32px);
+      line-height: 1.4;
+    }
+  }
+  
+  .description {
+    font-size: px2rem(24px);
+    line-height: 120%;
+    color: map-get($colors, text);
+    font-weight: map-get($font-weights, regular);
+    word-break: keep-all; // 한글 줄바꿈 예쁘게
+  
+    @include mobile {
+      font-size: px2rem(18px);
+    }
+  }

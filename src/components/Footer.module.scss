@@ -1,0 +1,88 @@
+.footer {
+    background-color: map-get($grey, 50);
+    padding: px2rem(60px) 0;
+    color: map-get($grey, 500);
+    font-family: map-get($fonts, body);
+  }
+  
+  .inner {
+    max-width: px2rem(1248px);
+    margin: 0 auto;
+    padding: 0 px2rem(24px);
+  }
+  
+  .socials {
+    display: flex;
+    gap: px2rem(12px);
+    margin-bottom: px2rem(32px); // 아이콘과 텍스트 사이 간격
+  
+    .icon {
+      width: px2rem(40px);
+      height: px2rem(40px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s ease;
+
+  
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+  }
+  
+  .infoArea {
+    display: flex;
+    flex-direction: column;
+    gap: px2rem(8px); // 각 줄 사이의 간격
+    margin-bottom: px2rem(24px);
+  
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: px2rem(16px);
+      font-size: px2rem(14px);
+      line-height: 1.6;
+  
+      span:not(:last-child):not(.bold)::after {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: px2rem(10px);
+        color: map-get($grey, 700);
+        margin-left: px2rem(16px);
+        vertical-align: middle;
+      }
+  
+    }
+  
+    .contact {
+      margin-bottom: px2rem(4px); // 이메일/전화번호 줄만 살짝 더 띄움
+      color: map-get($grey, 600); 
+      .bold {
+        font-weight: map-get($font-weights, semibold);// 볼드 텍스트는 좀 더 밝게
+        font-size: px2rem(15px);
+      }
+    }
+  }
+  
+  .copyright {
+    font-size: px2rem(13px);
+    color: map-get($grey, 700);
+  }
+  
+  // 모바일 대응
+  @include mobile {
+    .footer {
+      padding: px2rem(40px) 0;
+    }
+    .infoArea .row {
+      gap: px2rem(8px);
+      span::after {
+        display: none; // 모바일에서는 구분선 제거하고 줄바꿈 유도
+      }
+      span {
+        width: 100%;
+      }
+    }
+  }

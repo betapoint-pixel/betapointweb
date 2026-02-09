@@ -1,0 +1,72 @@
+.container {
+  padding: px2rem(80px) px2rem(20px);
+  max-width: px2rem(1200px);
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // 2열 배치
+  gap: px2rem(24px);
+
+  @include tablet {
+    gap: px2rem(16px);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr; // 모바일 1열
+  }
+}
+
+.card {
+  padding: px2rem(40px);
+  border-radius: px2rem(24px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: px2rem(300px);
+  
+  // 테마별 배경색 (이미지 기반)
+  &.green {
+    background-color: #E6ECE9; // 옅은 민트/그린 계열
+  }
+  
+  &.blue {
+    background-color: #E8EBF2; // 옅은 블루/퍼플 계열
+  }
+
+  @include mobile {
+    padding: px2rem(32px);
+    min-height: auto;
+  }
+}
+
+.content {
+  font-family: map-get($fonts, body);
+  font-size: px2rem(24px);
+  font-weight: map-get($font-weights, medium);
+  line-height: 1.5;
+  color: map-get($colors, text);
+  margin: 0 0 px2rem(40px) 0;
+  word-break: keep-all;
+
+  @include tablet {
+    font-size: px2rem(22px);
+  }
+
+  @include mobile {
+    font-size: px2rem(18px);
+  }
+}
+
+.author {
+  font-family: map-get($fonts, body);
+  font-size: px2rem(16px);
+  font-weight: map-get($font-weights, regular);
+  color: map-get($grey, 600);
+  opacity: 0.8;
+
+  @include mobile {
+    font-size: px2rem(14px);
+  }
+}

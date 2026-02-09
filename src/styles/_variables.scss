@@ -1,0 +1,40 @@
+$colors: (
+  primary: #00A54D,
+  dark: #005A2A,
+  light: #A4E5C2,
+  lighter: #E2FFF0,
+  gr: linear-gradient(to right, #00A54D, #8DAFFF),
+  bg: #f8fafc,      
+  text: #333
+);
+
+$grey: (
+  white: #ffffff,
+  50: #F8F9FC,
+  100: #E8ECEF,
+  200: #CFD4DA,
+  300: #A8AFB7,
+  400: #8B9199,
+  500: #72787F,
+  600: #52575D,
+  700: #3B3E42,
+  800: #222426,
+  900: #17181A,
+);
+
+$fonts: (
+  heading: 'Pretendard, sans-serif',
+  body: 'Pretendard, system-ui, sans-serif',
+);
+
+$font-weights: (
+  thin: 100,
+  extralight: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  black: 900,
+);

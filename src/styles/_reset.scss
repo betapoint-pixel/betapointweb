@@ -1,0 +1,46 @@
+// 브라우저 기본값 통일
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;  // 1rem = 16px 기준
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul, ol, dd {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, 
+a {
+  cursor: pointer;
+  
+  &:hover {
+    cursor: pointer;  // 호버 강조
+  }
+  
+  &:active {
+    cursor: grabbing;  // 클릭 중엔 잡는 모양
+  }
+}

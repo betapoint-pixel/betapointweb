@@ -1,0 +1,132 @@
+.section {
+    padding: px2rem(100px) 0;
+    background-color: map-get($grey, white);
+  
+    @include mobile {
+      padding: px2rem(60px) 0;
+    }
+  }
+  
+  .inner {
+    max-width: px2rem(800px); // FAQ는 가독성을 위해 너비를 좁게 설정
+    margin: 0 auto;
+    padding: 0 px2rem(24px);
+  }
+  
+  .title {
+    font-family: map-get($fonts, heading);
+    font-size: px2rem(32px);
+    font-weight: map-get($font-weights, bold);
+    color: map-get($colors, text);
+    text-align: center;
+    margin-bottom: px2rem(60px);
+  
+    @include mobile {
+      font-size: px2rem(26px);
+      margin-bottom: px2rem(40px);
+    }
+  }
+  
+  .faqList {
+    border-top: 1px solid map-get($grey, 900); // 상단 굵은 선
+  }
+  
+  .faqItem {
+    border-bottom: 1px solid map-get($grey, 100);
+    overflow: hidden;
+  
+    &.active {
+      .questionText {
+        color: map-get($colors, primary);
+      }
+      .arrowIcon {
+        transform: rotate(180deg);
+      }
+      .answerBox {
+        grid-template-rows: 1fr; // CSS Grid를 활용한 부드러운 높이 애니메이션
+        opacity: 1;
+        padding-bottom: px2rem(30px);
+      }
+    }
+  }
+  
+  .questionBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: px2rem(28px) 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+  
+    &:hover .questionText {
+      color: map-get($colors, primary);
+    }
+  }
+  
+  .questionText {
+    font-size: px2rem(18px);
+    font-weight: map-get($font-weights, semibold);
+    color: map-get($colors, text);
+    transition: color 0.3s ease;
+  
+    @include mobile {
+      font-size: px2rem(16px);
+      padding-right: px2rem(20px);
+    }
+  }
+  
+  .arrowIcon {
+    width: px2rem(24px);
+    height: px2rem(24px);
+    position: relative;
+    transition: transform 0.3s ease;
+  
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: px2rem(12px);
+      height: 2px;
+      background-color: map-get($grey, 400);
+      border-radius: 2px;
+    }
+  
+    &::before {
+      left: px2rem(2px);
+      transform: rotate(45deg);
+    }
+  
+    &::after {
+      right: px2rem(2px);
+      transform: rotate(-45deg);
+    }
+  }
+  
+  .answerBox {
+    display: grid;
+    grid-template-rows: 0fr; // 기본 높이 0
+    transition: grid-template-rows 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    opacity: 0;
+  }
+  
+  .answerInner {
+    overflow: hidden; // Grid 애니메이션을 위해 필수
+    p {
+      font-size: px2rem(16px);
+      line-height: 1.6;
+      color: map-get($grey, 600);
+      background-color: map-get($grey, 50); // 답변 영역 배경색 (선택사항)
+      padding: px2rem(24px);
+      border-radius: px2rem(12px);
+      word-break: keep-all;
+  
+      @include mobile {
+        font-size: px2rem(14px);
+        padding: px2rem(20px);
+      }
+    }
+  }

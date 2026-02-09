@@ -1,0 +1,19 @@
+@use 'sass:math';
+
+// 함수
+@function px2rem($px) {
+  @return math.div($px, 16px) * 1rem;
+}
+
+// 믹스인
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

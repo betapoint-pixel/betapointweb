@@ -1,0 +1,79 @@
+.wrapper {
+    max-width: px2rem(1200px);
+    margin: 0 auto;
+    padding: px2rem(100px) px2rem(24px);
+    text-align: center;
+  }
+  
+  .title {
+    font-family: map-get($fonts, heading);
+    font-size: px2rem(40px);
+    font-weight: map-get($font-weights, bold);
+    color: map-get($colors, text);
+    margin-bottom: px2rem(60px);
+  
+    @include mobile {
+      font-size: px2rem(28px);
+    }
+  }
+  
+  .statsContainer {
+    display: flex;
+    justify-content: center;
+    gap: px2rem(30px);
+    margin-bottom: px2rem(100px);
+    flex-wrap: wrap;
+  
+    @include mobile {
+      gap: px2rem(16px);
+    }
+  }
+  
+  .statCircle {
+    width: px2rem(180px);
+    height: px2rem(180px);
+    border: 1px solid map-get($grey, 100);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: map-get($grey, white);
+  
+    @include mobile {
+      width: px2rem(140px);
+      height: px2rem(140px);
+    }
+  }
+  
+  .statLabel {
+    font-size: px2rem(14px);
+    color: map-get($colors, primary);
+    font-weight: map-get($font-weights, semibold);
+    margin-bottom: px2rem(8px);
+  }
+  
+  .statValue {
+    font-size: px2rem(44px);
+    font-weight: map-get($font-weights, bold);
+    color: map-get($colors, text);
+  
+    small {
+      font-size: px2rem(20px);
+      margin-left: px2rem(2px);
+    }
+  
+    @include mobile {
+      font-size: px2rem(32px);
+    }
+  }
+  
+  .reviewGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: px2rem(24px);
+  
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }

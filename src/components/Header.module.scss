@@ -1,0 +1,93 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap; // 줄바꿈 방지
+
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  
+  // [기본 수치]
+  height: 95px;
+  padding: 0 24px;
+  /* background: #FFFFFF; */
+
+  @include tablet {
+    height: 80px;
+    padding: 0 20px;
+  }
+
+  @include mobile {
+    height: 70px;
+    padding: 0 16px;
+  }
+}
+
+.logo {
+  flex-shrink: 0; // 로고 찌그러짐 방지
+  display: flex;
+  align-items: center;
+  font-size: px2rem(28px);
+  font-weight: 800;
+  color: map-get($colors, primary);
+  width: px2rem(200px); 
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap; // 메뉴 아이템 줄바꿈 방지
+  
+  // 로고와의 간격
+  margin-left: 60px; 
+
+  font-size: px2rem(18px);
+  font-weight: map-get($font-weights, semibold);
+  color: map-get($grey, 800);
+  a:hover,
+  a:focus,
+  a.active,
+  a[aria-current="page"] {
+    color: map-get($colors, primary);
+    font-weight: map-get($font-weights, bold)
+  }
+  a {
+    padding: 10px;
+  }
+  // a끼리 간격 대략 64px, 반응형으로 더 붙을 수 있도록 설정
+  a {
+    margin-right: px2rem(64px);
+
+    @include tablet {
+      margin-right: px2rem(32px);
+    }
+
+    @include mobile {
+      margin-right: px2rem(6px);
+    }
+
+    &:last-child {
+      margin-right: 0; // 마지막 메뉴 아이템에는 간격 제거
+    }
+  }
+
+
+  @include tablet {
+    margin-left: px2rem(30px);
+  }
+
+  @include mobile {
+    margin-left: px2rem(15px);
+  }
+
+  a {
+    white-space: nowrap; // 텍스트 줄바꿈 방지
+    font-size: px2rem(16px);
+    /* color: #333; */
+
+    @include mobile {
+    font-size: px2rem(13px); // 공간 확보를 위해 폰트 축소
+    }
+  }
+}

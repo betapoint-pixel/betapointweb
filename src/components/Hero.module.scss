@@ -1,0 +1,79 @@
+.hero {
+    background-color: map-get($colors, bg);
+    padding: px2rem(100px) px2rem(60px);
+    overflow: hidden;
+  
+    @include mobile {
+      padding: px2rem(60px) 0;
+    }
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: px2rem(40px);
+  
+    @include tablet {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  .content {
+    flex: 1;
+  
+    .title {
+      font-family: map-get($fonts, heading); // Pretendard
+      font-size: px2rem(48px);
+      font-weight: map-get($font-weights, bold); // 700
+      line-height: 114%;
+      color: map-get($colors, text);
+  
+      .brand {
+        color: map-get($colors, primary); // #00A54D
+      }
+  
+      @include mobile {
+        font-size: px2rem(32px);
+      }
+    }
+  
+    .ctaButton {
+      margin-top: px2rem(30px);
+      padding: px2rem(12px) px2rem(24px);
+      background: map-get($colors, gr);
+      color: white;
+      border-radius: 50px; // 둥근 버튼
+      font-size: px2rem(20px);
+      font-weight: map-get($font-weights, semibold);
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+  
+      &:hover {
+        background-color: map-get($colors, dark);
+      }
+    }
+  }
+  
+  .imageBox {
+    flex: 1;
+    width: 100%;
+    max-width: px2rem(500px);
+    aspect-ratio: 4 / 3;
+    border-radius: px2rem(24px); // 디자인의 둥근 모서리
+    overflow: hidden;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; // 이미지가 잘리지 않게
+    object-position: center;
+    display: block;
+    border-radius: inherit;
+  }

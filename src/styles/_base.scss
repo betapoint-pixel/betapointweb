@@ -1,0 +1,25 @@
+// 기본 폰트, 배경
+:root {
+  font-family: map-get($fonts, body);
+}
+
+body {
+    font-family: map-get($fonts, body);
+    color: map-get($colors, text);
+    background: map-get($colors, bg);
+  }
+  
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  
